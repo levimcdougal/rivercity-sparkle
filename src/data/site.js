@@ -6,7 +6,7 @@ export const business = {
   email: 'info@rivercitysparkle.com',
   emailHref: 'mailto:info@rivercitysparkle.com',
   reviewUrl: 'https://g.page/r/CVqkXQ/review',
-  siteUrl: 'https://www.rivercitysparkle.com',
+  siteUrl: 'https://rivercity-sparkle.pages.dev',
   areas: ['Louisville', 'Middletown', 'St. Matthews', 'Jeffersontown', 'surrounding areas'],
 }
 
