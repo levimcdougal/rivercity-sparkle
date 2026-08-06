@@ -1629,6 +1629,10 @@
     gap: 32px;
   }
 
+  .footer-col-services {
+    padding-left: 0;
+  }
+
   .navbar-links {
     display: none;
     position: absolute;
