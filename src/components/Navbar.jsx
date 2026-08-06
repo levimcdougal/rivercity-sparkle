@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { business } from '../data/site'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo-optimized.png'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -15,13 +15,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [pathname])
 
+  useEffect(() => {
+    if (!open) return undefined
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [open])
+
   const isTransparent = pathname === '/' && !scrolled
 
   return (
     <nav className={`navbar${isTransparent ? ' navbar-transparent' : ''}`}>
       <div className="navbar-inner">
         <NavLink to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-          <img src={logo} alt={business.name} />
+          <img src={logo} alt={business.name} width="700" height="467" decoding="async" />
         </NavLink>
 
         <ul className={`navbar-links${open ? ' open' : ''}`}>
@@ -42,10 +51,13 @@ export default function Navbar() {
           </li>
         </ul>
 
+        {open && <button className="nav-backdrop" aria-label="Close navigation menu" onClick={() => setOpen(false)} />}
+
         <button
-          className="hamburger"
+          className={`hamburger${open ? ' open' : ''}`}
           onClick={() => setOpen(o => !o)}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={open}
         >
           <span />
           <span />

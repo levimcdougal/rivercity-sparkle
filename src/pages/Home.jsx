@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom'
 import { CalendarCheck, Home, KeyRound, Sparkles, Star } from 'lucide-react'
-import cleanImg from '../assets/clean.png'
-import galleryImg1 from '../assets/IMG1.jpg'
-import galleryImg2 from '../assets/IMG2.jpg'
-import galleryImg3 from '../assets/IMG3.jpg'
-import galleryImg4 from '../assets/IMG4.jpg'
-import galleryImg5 from '../assets/IMG5.jpg'
-import galleryImg6 from '../assets/IMG6.jpg'
-import galleryImg7 from '../assets/IMG7.jpg'
-import galleryImg8 from '../assets/IMG8.jpg'
-import galleryImg9 from '../assets/IMG9.jpg'
-import galleryImg10 from '../assets/IMG10.jpg'
-import galleryImg11 from '../assets/IMG11.jpg'
+import cleanImg from '../assets/clean-optimized.jpg'
+import galleryImg1 from '../assets/IMG1-optimized.jpg'
+import galleryImg2 from '../assets/IMG2-optimized.jpg'
+import galleryImg3 from '../assets/IMG3-optimized.jpg'
+import galleryImg4 from '../assets/IMG4-optimized.jpg'
+import galleryImg5 from '../assets/IMG5-optimized.jpg'
+import galleryImg6 from '../assets/IMG6-optimized.jpg'
+import galleryImg7 from '../assets/IMG7-optimized.jpg'
+import galleryImg8 from '../assets/IMG8-optimized.jpg'
+import galleryImg9 from '../assets/IMG9-optimized.jpg'
+import galleryImg10 from '../assets/IMG10-optimized.jpg'
+import galleryImg11 from '../assets/IMG11-optimized.jpg'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
-import heroBg from '../assets/back.png'
+import heroBg from '../assets/back-optimized.jpg'
 import { services, testimonials, faqs } from '../data/site'
 
 const galleryItems = [
@@ -49,6 +49,7 @@ export default function HomePage() {
 
   return (
     <main className="page-wrapper">
+      <link rel="preload" as="image" href={heroBg} fetchPriority="high" />
       <SEO
         title="Professional Home Cleaning in Louisville You Can Trust"
         description="RiverCity Sparkle provides trusted home cleaning, deep cleaning, move-in/move-out cleaning, and short-term rental turnovers in Louisville, Middletown, St. Matthews, and Jeffersontown."
@@ -122,7 +123,7 @@ export default function HomePage() {
           <FadeIn>
             <div className="why-split">
               <div className="why-image-wrap">
-                <img src={cleanImg} alt="RiverCity Sparkle professional cleaning supplies" className="why-image" />
+                <img src={cleanImg} alt="RiverCity Sparkle professional cleaning supplies" className="why-image" loading="lazy" decoding="async" />
               </div>
               <div className="why-content">
                 <p className="section-label">Why Choose Us</p>
@@ -189,7 +190,7 @@ export default function HomePage() {
             <div className="photo-marquee-track">
               {[...galleryItems, ...galleryItems, ...galleryItems].map((image, index) => (
                 <figure className="photo-marquee-card" key={`${image}-${index}`}>
-                  <img src={image} alt={`RiverCity Sparkle cleaning gallery ${(index % galleryItems.length) + 1}`} />
+                  <img src={image} alt={`RiverCity Sparkle cleaning gallery ${(index % galleryItems.length) + 1}`} loading="lazy" decoding="async" />
                 </figure>
               ))}
             </div>

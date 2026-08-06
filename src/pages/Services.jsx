@@ -2,10 +2,10 @@ import { CalendarCheck, Home, KeyRound, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
-import resImg from '../assets/res.png'
-import airImg from '../assets/air.png'
-import moveImg from '../assets/move.png'
-import cleanImg from '../assets/clean.png'
+import resImg from '../assets/res-optimized.jpg'
+import airImg from '../assets/air-optimized.jpg'
+import moveImg from '../assets/move-optimized.jpg'
+import cleanImg from '../assets/clean-optimized.jpg'
 import { business, services } from '../data/site'
 
 const images = [resImg, cleanImg, moveImg, airImg]
@@ -57,7 +57,7 @@ export default function Services() {
               return (
                 <FadeIn key={service.title} delay={i * 100}>
                   <article className="service-card-full" id={service.slug}>
-                    <img src={images[i]} alt={`${service.title} by RiverCity Sparkle`} className="service-card-img" />
+                    <img src={images[i]} alt={`${service.title} by RiverCity Sparkle`} className="service-card-img" loading="lazy" decoding="async" />
                     <div className="service-card-heading">
                       <div className="service-icon" style={{ width: 54, height: 54 }}>
                         <Icon size={26} color="var(--blue)" strokeWidth={1.75} />
