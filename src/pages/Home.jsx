@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Building2, CalendarCheck, Home, KeyRound, Sparkles, Star } from 'lucide-react'
-import whyVideo from '../assets/vid.mp4'
+import whyVideo from '../assets/vid-optimized.mp4'
+import whyVideoPoster from '../assets/vid-poster.png'
 import galleryImg1 from '../assets/IMG1-optimized.jpg'
 import galleryImg2 from '../assets/IMG2-optimized.jpg'
 import galleryImg3 from '../assets/IMG3-optimized.jpg'
@@ -136,7 +137,7 @@ export default function HomePage() {
           <FadeIn>
             <div className="why-split">
               <div className="why-image-wrap">
-                <video className="why-image why-video" controls loop playsInline preload="metadata" aria-label="RiverCity Sparkle professional cleaning">
+                <video className="why-image why-video" controls loop playsInline preload="none" poster={whyVideoPoster} aria-label="RiverCity Sparkle professional cleaning">
                   <source src={whyVideo} type="video/mp4" />
                 </video>
               </div>

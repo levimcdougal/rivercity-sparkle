@@ -5,7 +5,7 @@ import resImg from '../assets/res-optimized.jpg'
 import airImg from '../assets/air-optimized.jpg'
 import moveImg from '../assets/move-optimized.jpg'
 import cleanImg from '../assets/clean-optimized.jpg'
-import commercialImg from '../assets/com.png'
+import commercialImg from '../assets/com-optimized.jpg'
 import { business, services } from '../data/site'
 
 const images = [resImg, cleanImg, moveImg, airImg, commercialImg]
