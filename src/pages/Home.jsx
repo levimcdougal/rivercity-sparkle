@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Building2, CalendarCheck, Home, KeyRound, Sparkles, Star } from 'lucide-react'
 import whyVideo from '../assets/vid-optimized.mp4'
@@ -49,6 +50,7 @@ const schema = {
 
 export default function HomePage() {
   const featuredReviews = testimonials.slice(0, 4)
+  const [videoStarted, setVideoStarted] = useState(false)
 
   return (
     <main className="page-wrapper">
@@ -137,9 +139,15 @@ export default function HomePage() {
           <FadeIn>
             <div className="why-split">
               <div className="why-image-wrap">
-                <video className="why-image why-video" controls loop playsInline preload="none" poster={whyVideoPoster} aria-label="RiverCity Sparkle professional cleaning">
+                <video className="why-image why-video" controls loop playsInline preload="metadata" poster={whyVideoPoster} onPlay={() => setVideoStarted(true)} aria-label="RiverCity Sparkle professional cleaning">
                   <source src={whyVideo} type="video/mp4" />
                 </video>
+                {!videoStarted && (
+                  <div className="why-video-preview" aria-hidden="true">
+                    <img src={whyVideoPoster} alt="" />
+                    <span className="why-video-play">▶</span>
+                  </div>
+                )}
               </div>
               <div className="why-content">
                 <p className="section-label">Why Choose Us</p>
