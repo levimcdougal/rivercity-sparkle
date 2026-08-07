@@ -6,6 +6,7 @@ export const business = {
   email: 'info@rivercitysparkle.com',
   emailHref: 'mailto:info@rivercitysparkle.com',
   reviewUrl: 'https://g.page/r/CVqkXQ/review',
+  bookingUrl: 'https://rivercitysparkle.launch27.com/?w_cleaning',
   siteUrl: 'https://rivercity-sparkle.pages.dev',
   areas: ['Louisville', 'Middletown', 'St. Matthews', 'Jeffersontown', 'surrounding areas'],
 }
@@ -91,6 +92,27 @@ export const services = [
       'Trash removal',
       'Light staging before guest arrival',
       'Laundry included when washer and dryer are available on-site',
+    ],
+  },
+  {
+    slug: 'commercial-cleaning',
+    title: 'Commercial Cleaning',
+    shortTitle: 'Commercial',
+    price: 'Custom Pricing',
+    summary: 'Professional cleaning for offices, nonprofits, and commercial spaces. An in-person or virtual walkthrough is required.',
+    description:
+      'RiverCity Sparkle provides dependable commercial cleaning plans tailored to your facility, schedule, traffic, and priorities. An in-person or virtual walkthrough is required before service so the team can confirm the scope and provide accurate pricing.',
+    includesTitle: 'Commercial Cleaning Can Include',
+    includes: [
+      'Required in-person or virtual walkthrough before service',
+      'Customized cleaning plan and schedule',
+      'Offices, reception areas, conference rooms, and common spaces',
+      'Restroom cleaning and disinfection',
+      'Breakroom and kitchen-area cleaning',
+      'Dusting and high-touch surface disinfection',
+      'Vacuuming, sweeping, and mopping',
+      'Trash and recycling removal',
+      'Recurring or one-time service options',
     ],
   },
 ]

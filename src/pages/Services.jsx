@@ -1,15 +1,15 @@
-import { CalendarCheck, Home, KeyRound, Sparkles } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Building2, CalendarCheck, Home, KeyRound, Sparkles } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
 import resImg from '../assets/res-optimized.jpg'
 import airImg from '../assets/air-optimized.jpg'
 import moveImg from '../assets/move-optimized.jpg'
 import cleanImg from '../assets/clean-optimized.jpg'
+import commercialImg from '../assets/com.png'
 import { business, services } from '../data/site'
 
-const images = [resImg, cleanImg, moveImg, airImg]
-const icons = [Home, Sparkles, KeyRound, CalendarCheck]
+const images = [resImg, cleanImg, moveImg, airImg, commercialImg]
+const icons = [Home, Sparkles, KeyRound, CalendarCheck, Building2]
 
 const schema = {
   '@context': 'https://schema.org',
@@ -40,13 +40,13 @@ export default function Services() {
     <main className="page-wrapper">
       <SEO
         title="Cleaning Services & Prices in Louisville"
-        description="See RiverCity Sparkle cleaning services and starting prices for residential cleaning, deep cleaning, move-in/move-out cleaning, and short-term rental turnovers in Louisville."
+        description="See RiverCity Sparkle services for residential, deep, move-in/move-out, short-term rental, and commercial cleaning in Louisville."
         path="/services"
         schema={schema}
       />
       <section className="page-hero">
         <h1>Cleaning Services & Prices</h1>
-        <p>Professional cleaning for homes, short-term rentals, move-outs, and detailed resets in Louisville and surrounding areas.</p>
+        <p>Professional cleaning for homes, short-term rentals, move-outs, offices, and commercial spaces in Louisville and surrounding areas.</p>
       </section>
 
       <section className="section">
@@ -76,7 +76,7 @@ export default function Services() {
                         ))}
                       </ul>
                     </div>
-                    <Link to="/contact" className="service-book-link">Ask about this service</Link>
+                    <a href={business.bookingUrl} className="service-book-link">Book Now</a>
                   </article>
                 </FadeIn>
               )
@@ -105,8 +105,8 @@ export default function Services() {
       <section className="cta-banner">
         <div className="section-inner">
           <h2>Not Sure Which Service You Need?</h2>
-          <p>Contact the team and they will help match your space to the right cleaning service.</p>
-          <Link to="/contact" className="btn-primary">Contact Us</Link>
+          <p>Choose your cleaning service and schedule a convenient date online.</p>
+          <a href={business.bookingUrl} className="btn-primary">Book Now</a>
         </div>
       </section>
     </main>

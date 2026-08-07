@@ -36,7 +36,7 @@ const steps = [
     Icon: Phone,
     step: '01',
     title: 'Reach Out',
-    desc: 'Call, text, email, or send the contact form to share your home, rental, or move-out cleaning needs.',
+    desc: 'Call, text, email, or book online to share your home, rental, or move-out cleaning needs.',
   },
   {
     Icon: CalendarCheck,
@@ -85,17 +85,6 @@ function FaqItem({ q, a }) {
 }
 
 export default function Contact() {
-  const handleContactSubmit = event => {
-    event.preventDefault()
-    const form = new FormData(event.currentTarget)
-    const subject = encodeURIComponent(`Cleaning inquiry from ${form.get('name')}`)
-    const body = encodeURIComponent(
-      `Name: ${form.get('name')}\nEmail: ${form.get('email')}\nPhone: ${form.get('phone') || 'Not provided'}\nService: ${form.get('service')}\n\nMessage:\n${form.get('message')}`,
-    )
-
-    window.location.href = `mailto:${business.email}?subject=${subject}&body=${body}`
-  }
-
   return (
     <main className="page-wrapper">
       <SEO
@@ -104,79 +93,42 @@ export default function Contact() {
         path="/contact"
         schema={faqSchema}
       />
+
       <section className="page-hero">
         <h1>Get In Touch</h1>
-        <p>Call, text, email, or send an inquiry for professional cleaning in Louisville and nearby communities.</p>
+        <p>Book online, call, text, or email for professional cleaning in Louisville and nearby communities.</p>
       </section>
 
-      <section className="section">
+      <section className="section direct-contact-section">
         <div className="section-inner">
           <FadeIn>
-            <div className="contact-layout">
-              <div className="booking-form-card contact-form-card" id="contact-form">
-                <div className="section-header contact-form-header">
-                  <p className="section-label">Send an Inquiry</p>
-                  <h2 className="section-title">Tell Us About Your Cleaning Needs</h2>
-                  <p className="section-subtitle">Share a few details and your email app will open a message addressed to RiverCity Sparkle.</p>
-                </div>
-                <form className="booking-form" onSubmit={handleContactSubmit}>
-                  <label>
-                    Name
-                    <input type="text" name="name" autoComplete="name" required />
-                  </label>
-                  <label>
-                    Email
-                    <input type="email" name="email" autoComplete="email" required />
-                  </label>
-                  <label>
-                    Phone (optional)
-                    <input type="tel" name="phone" autoComplete="tel" />
-                  </label>
-                  <label>
-                    Service
-                    <select name="service" defaultValue="Residential Cleaning">
-                      <option>Residential Cleaning</option>
-                      <option>Deep Cleaning</option>
-                      <option>Move-In/Move-Out Cleaning</option>
-                      <option>Short-Term Rental Cleaning</option>
-                      <option>Not Sure Yet</option>
-                    </select>
-                  </label>
-                  <label>
-                    How can we help?
-                    <textarea name="message" required />
-                  </label>
-                  <button type="submit" className="btn-primary">Send Inquiry</button>
-                </form>
-              </div>
-
-              <aside className="direct-contact-panel">
-                <p className="section-label">Contact Directly</p>
-                <h2>Prefer a quick conversation?</h2>
-                <p>Reach the RiverCity Sparkle team using any of these options.</p>
-                <div className="direct-contact-list">
-                  {contactMethods.map(({ Icon, label, value, href }) => (
-                    <a href={href} className="direct-contact-item" key={label}>
-                      <span className="direct-contact-icon">
-                        <Icon size={22} strokeWidth={1.8} />
-                      </span>
-                      <span>
-                        <strong>{label}</strong>
-                        <small>{value}</small>
-                      </span>
-                    </a>
-                  ))}
-                </div>
-                <p className="contact-privacy-note">Please do not send payment or other sensitive information.</p>
-              </aside>
+            <div className="contact-intro">
+              <h2>We're Here to Help</h2>
+              <p>Choose the contact method that works best for you. The RiverCity Sparkle team is ready to answer questions and help with scheduling.</p>
+            </div>
+            <div className="contact-cards">
+              {contactMethods.map(({ Icon, label, value, desc, btnLabel, href }) => (
+                <article className="contact-card" key={label}>
+                  <div className="contact-card-icon">
+                    <Icon size={28} color="var(--blue)" strokeWidth={1.8} />
+                  </div>
+                  <h3>{label}</h3>
+                  <p className="contact-card-value">{value}</p>
+                  <p className="contact-card-desc">{desc}</p>
+                  <a href={href} className="contact-card-btn">{btnLabel}</a>
+                </article>
+              ))}
             </div>
           </FadeIn>
         </div>
       </section>
 
-      <section className="hours-banner">
-        <p className="hours-banner-label">Service Areas</p>
-        <div className="hours-banner-areas">{business.areas.join(' • ')}</div>
+      <section className="cta-banner">
+        <div className="section-inner">
+          <h2>Ready to Schedule Your Cleaning?</h2>
+          <p>Choose your service, date, and time through our secure online booking page.</p>
+          <a href={business.bookingUrl} className="btn-primary">Book Now</a>
+        </div>
       </section>
 
       <section className="section section-alt">
@@ -203,6 +155,11 @@ export default function Contact() {
             </div>
           </FadeIn>
         </div>
+      </section>
+
+      <section className="hours-banner">
+        <p className="hours-banner-label">Service Areas</p>
+        <div className="hours-banner-areas">{business.areas.join(' • ')}</div>
       </section>
 
       <section className="section">

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { CalendarCheck, Home, KeyRound, Sparkles, Star } from 'lucide-react'
-import cleanImg from '../assets/clean-optimized.jpg'
+import { Building2, CalendarCheck, Home, KeyRound, Sparkles, Star } from 'lucide-react'
+import whyVideo from '../assets/vid.mp4'
 import galleryImg1 from '../assets/IMG1-optimized.jpg'
 import galleryImg2 from '../assets/IMG2-optimized.jpg'
 import galleryImg3 from '../assets/IMG3-optimized.jpg'
@@ -30,6 +30,8 @@ const galleryItems = [
   galleryImg10,
   galleryImg11,
 ]
+
+const serviceIcons = [Home, Sparkles, KeyRound, CalendarCheck, Building2]
 
 const schema = {
   '@context': 'https://schema.org',
@@ -86,6 +88,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="give-back-banner" aria-label="Back-to-school cleaning promotion">
+        <div className="give-back-inner">
+          <div className="give-back-copy">
+            <p className="give-back-kicker">RiverCity Sparkle Gives Back</p>
+            <h2>Save 20% on Your Back-to-School Cleaning</h2>
+            <p>Use code <strong>BACKTOSCHOOL</strong> when scheduling your cleaning.</p>
+          </div>
+          <Link to="/contact" className="give-back-btn">Claim This Offer</Link>
+        </div>
+      </section>
+
       <section className="section services-section">
         <div className="section-inner">
           <FadeIn>
@@ -100,7 +113,7 @@ export default function HomePage() {
           <FadeIn delay={150}>
             <div className="services-grid">
               {services.map(({ title, summary, price, slug }, index) => {
-                const Icon = index === 0 ? Home : index === 1 ? Sparkles : index === 2 ? KeyRound : CalendarCheck
+                const Icon = serviceIcons[index]
                 return (
                   <div className="service-card" key={title}>
                     <div className="service-icon">
@@ -123,7 +136,9 @@ export default function HomePage() {
           <FadeIn>
             <div className="why-split">
               <div className="why-image-wrap">
-                <img src={cleanImg} alt="RiverCity Sparkle professional cleaning supplies" className="why-image" loading="lazy" decoding="async" />
+                <video className="why-image why-video" controls loop playsInline preload="metadata" aria-label="RiverCity Sparkle professional cleaning">
+                  <source src={whyVideo} type="video/mp4" />
+                </video>
               </div>
               <div className="why-content">
                 <p className="section-label">Why Choose Us</p>
