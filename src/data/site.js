@@ -7,6 +7,9 @@ export const business = {
   emailHref: 'mailto:info@rivercitysparkle.com',
   reviewUrl: 'https://g.page/r/CVqkXQ/review',
   bookingUrl: 'https://rivercitysparkle.launch27.com/?w_cleaning',
+  instagramUrl: 'https://www.instagram.com/rivercitysparkle2025',
+  facebookUrl: 'https://www.facebook.com/share/1854TLKZk9',
+  googleProfileUrl: 'https://share.google/i1PM9Yoybu0TutpSq',
   siteUrl: 'https://rivercity-sparkle.pages.dev',
   areas: ['Louisville', 'Middletown', 'St. Matthews', 'Jeffersontown', 'surrounding areas'],
 }

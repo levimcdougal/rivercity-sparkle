@@ -91,14 +91,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="give-back-banner" aria-label="Back-to-school cleaning promotion">
+      <section className="give-back-banner" aria-label="Community fundraising partnership">
         <div className="give-back-inner">
           <div className="give-back-copy">
-            <p className="give-back-kicker">RiverCity Sparkle Gives Back</p>
-            <h2>Save 20% on Your Back-to-School Cleaning</h2>
-            <p>Use code <strong>BACKTOSCHOOL</strong> when scheduling your cleaning.</p>
+            <p className="give-back-kicker">New!</p>
+            <h2>RiverCity Give Back Partnership</h2>
+            <p className="give-back-lead">Supporting our community in a meaningful way.</p>
+            <p>A simple opportunity for schools, churches, nonprofits, and local organizations to benefit while making a difference.</p>
           </div>
-          <Link to="/contact" className="give-back-btn">Claim This Offer</Link>
+          <Link to="/contact" className="give-back-btn">Learn More</Link>
         </div>
       </section>
 
