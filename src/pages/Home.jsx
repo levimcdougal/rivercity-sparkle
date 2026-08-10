@@ -99,7 +99,14 @@ export default function HomePage() {
             <p className="give-back-lead">Supporting our community in a meaningful way.</p>
             <p>A simple opportunity for schools, churches, nonprofits, and local organizations to benefit while making a difference.</p>
           </div>
-          <Link to="/contact" className="give-back-btn">Learn More</Link>
+          <a
+            href="http://www.rivercitygivesback.info"
+            className="give-back-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn More
+          </a>
         </div>
       </section>
 
