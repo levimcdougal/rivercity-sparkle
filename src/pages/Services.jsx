@@ -1,11 +1,12 @@
 import { Building2, CalendarCheck, Home, KeyRound, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
-import resImg from '../assets/res-optimized.jpg'
-import airImg from '../assets/air-optimized.jpg'
-import moveImg from '../assets/move-optimized.jpg'
-import cleanImg from '../assets/clean-optimized.jpg'
-import commercialImg from '../assets/com-optimized.jpg'
+import resImg from '../assets/service-residential-original.jpg'
+import airImg from '../assets/service-rental-original.jpg'
+import moveImg from '../assets/service-move-natural-v2.jpg'
+import cleanImg from '../assets/service-deep-original.jpg'
+import commercialImg from '../assets/service-commercial-natural-v2.jpg'
 import { business, services } from '../data/site'
 
 const images = [resImg, cleanImg, moveImg, airImg, commercialImg]
@@ -76,7 +77,7 @@ export default function Services() {
                         ))}
                       </ul>
                     </div>
-                    <a href={business.bookingUrl} className="service-book-link">Book Now</a>
+                    <Link to="/book" className="service-book-link">Book Now</Link>
                   </article>
                 </FadeIn>
               )
@@ -106,7 +107,7 @@ export default function Services() {
         <div className="section-inner">
           <h2>Not Sure Which Service You Need?</h2>
           <p>Choose your cleaning service and schedule a convenient date online.</p>
-          <a href={business.bookingUrl} className="btn-primary">Book Now</a>
+          <Link to="/book" className="btn-primary">Book Now</Link>
         </div>
       </section>
     </main>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CalendarCheck, ChevronDown, Mail, MessageSquare, Phone, Sparkles, ThumbsUp } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
@@ -127,7 +128,7 @@ export default function Contact() {
         <div className="section-inner">
           <h2>Ready to Schedule Your Cleaning?</h2>
           <p>Choose your service, date, and time through our secure online booking page.</p>
-          <a href={business.bookingUrl} className="btn-primary">Book Now</a>
+          <Link to="/book" className="btn-primary">Book Now</Link>
         </div>
       </section>
 

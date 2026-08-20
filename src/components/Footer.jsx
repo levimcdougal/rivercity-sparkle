@@ -28,6 +28,7 @@ export default function Footer() {
                 </li>
               ))}
               <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/book">Book Now</Link></li>
             </ul>
           </div>
 

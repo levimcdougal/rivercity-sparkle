@@ -45,8 +45,13 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className="navbar-cta" onClick={() => setOpen(false)}>
+            <NavLink to="/contact" onClick={() => setOpen(false)}>
               Contact Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/book" className="navbar-cta" onClick={() => setOpen(false)}>
+              Book Now
             </NavLink>
           </li>
         </ul>

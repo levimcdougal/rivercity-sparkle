@@ -16,7 +16,7 @@ import galleryImg10 from '../assets/IMG10-optimized.jpg'
 import galleryImg11 from '../assets/IMG11-optimized.jpg'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
-import heroBg from '../assets/back-optimized.jpg'
+import heroBg from '../assets/hero-kitchen-white-v3.jpg'
 import { services, testimonials, faqs } from '../data/site'
 
 const galleryItems = [

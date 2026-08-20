@@ -907,6 +907,38 @@
   margin: 0 auto;
 }
 
+/* ── Booking Page ────────────────────────────── */
+.booking-hero {
+  padding-bottom: 52px;
+}
+
+.booking-widget-section {
+  background: var(--gray-light);
+  padding: 42px 18px 72px;
+}
+
+.booking-widget-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid #cde4f5;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#booking-widget-iframe {
+  display: block;
+  width: 100% !important;
+  height: clamp(680px, 78vh, 960px) !important;
+  min-height: 0;
+  border: 0 !important;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 1;
+  touch-action: manipulation !important;
+}
+
 .hours-banner-areas {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
@@ -1867,6 +1899,21 @@
 
   .page-hero {
     padding: 118px 18px 58px;
+  }
+
+  .booking-widget-section {
+    padding: 24px 0 48px;
+  }
+
+  .booking-widget-container {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+
+  #booking-widget-iframe {
+    height: 75svh !important;
+    min-height: 600px;
   }
 
   .service-card-full {
