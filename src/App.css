@@ -9,6 +9,15 @@
   to { transform: translateX(0); }
 }
 
+@keyframes phoneRing {
+  0%, 82%, 100% { transform: rotate(0); }
+  85% { transform: rotate(18deg); }
+  88% { transform: rotate(-16deg); }
+  91% { transform: rotate(14deg); }
+  94% { transform: rotate(-10deg); }
+  97% { transform: rotate(6deg); }
+}
+
 .page-transition {
   animation: pageIn 0.4s ease both;
 }
@@ -62,6 +71,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: -152px;
 }
 
 .navbar-logo img {
@@ -83,11 +93,65 @@
   justify-content: center;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-phone {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navbar-phone:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.navbar-phone-icon {
+  flex-shrink: 0;
+  transform-origin: center;
+  animation: phoneRing 4s ease-in-out infinite;
+}
+
+.navbar-transparent .navbar-phone {
+  color: var(--text);
+}
+
+.navbar-transparent .navbar-phone:hover {
+  color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-phone-icon {
+    animation: none;
+  }
+}
+
 .navbar-links {
   display: flex;
   gap: 4px;
   list-style: none;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .navbar-links a {
@@ -1756,10 +1820,24 @@
     padding: 0 14px;
   }
 
+  .navbar-actions {
+    gap: 4px;
+  }
+
+  .navbar-phone {
+    position: static;
+    transform: none;
+    font-size: 13px;
+  }
+
   .navbar-logo img {
     height: 126px;
     max-width: 190px;
     transform: translateY(6px);
+  }
+
+  .navbar-logo {
+    margin-left: 0;
   }
 
   .contact-layout {
@@ -1842,6 +1920,7 @@
     border-top: 1px solid #cde4f5;
     gap: 4px;
     z-index: 3;
+    transform: none;
   }
 
   .navbar-links.open {

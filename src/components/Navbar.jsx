@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { Phone } from 'lucide-react'
 import { business } from '../data/site'
 import logo from '../assets/logo-optimized.png'
 
@@ -33,7 +34,8 @@ export default function Navbar() {
           <img src={logo} alt={business.name} width="700" height="467" decoding="async" />
         </NavLink>
 
-        <ul className={`navbar-links${open ? ' open' : ''}`}>
+        <div className="navbar-actions">
+          <ul className={`navbar-links${open ? ' open' : ''}`}>
           <li>
             <NavLink to="/" end onClick={() => setOpen(false)}>
               Home
@@ -54,20 +56,26 @@ export default function Navbar() {
               Book Now
             </NavLink>
           </li>
-        </ul>
+          </ul>
+
+          <button
+            className={`hamburger${open ? ' open' : ''}`}
+            onClick={() => setOpen(o => !o)}
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={open}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <a className="navbar-phone" href={business.phoneHref} aria-label={`Call RiverCity Sparkle at ${business.phoneDisplay}`}>
+            <Phone className="navbar-phone-icon" size={17} aria-hidden="true" />
+            {business.phoneDisplay}
+          </a>
+        </div>
 
         {open && <button className="nav-backdrop" aria-label="Close navigation menu" onClick={() => setOpen(false)} />}
-
-        <button
-          className={`hamburger${open ? ' open' : ''}`}
-          onClick={() => setOpen(o => !o)}
-          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={open}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
       </div>
     </nav>
   )

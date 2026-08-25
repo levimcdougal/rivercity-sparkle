@@ -69,7 +69,7 @@ export default function HomePage() {
             Trusted cleaning for busy homes, rentals, property managers, and offices. Book in 60 seconds and let RiverCity Sparkle handle the details.
           </p>
           <div className="hero-buttons">
-            <Link to="/contact" className="btn-primary">Request a Cleaning</Link>
+            <Link to="/book" className="btn-primary">Book Now</Link>
             <Link to="/services" className="btn-outline">View Services</Link>
           </div>
           <div className="hero-stats" aria-label="RiverCity Sparkle highlights">
@@ -233,8 +233,8 @@ export default function HomePage() {
       <section className="cta-banner">
         <div className="section-inner">
           <h2>Ready for a Cleaner Space?</h2>
-          <p>Contact RiverCity Sparkle to discuss your cleaning needs and available dates.</p>
-          <Link to="/contact" className="btn-primary">Request a Cleaning</Link>
+          <p>Choose your cleaning service and schedule a convenient date online.</p>
+          <Link to="/book" className="btn-primary">Book Now</Link>
         </div>
       </section>
 
