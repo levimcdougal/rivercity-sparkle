@@ -56,6 +56,12 @@ export default function Navbar() {
               Book Now
             </NavLink>
           </li>
+          <li className="navbar-mobile-phone">
+            <a href={business.phoneHref} onClick={() => setOpen(false)}>
+              <Phone size={17} aria-hidden="true" />
+              {business.phoneDisplay}
+            </a>
+          </li>
           </ul>
 
           <button
@@ -71,7 +77,7 @@ export default function Navbar() {
 
           <a className="navbar-phone" href={business.phoneHref} aria-label={`Call RiverCity Sparkle at ${business.phoneDisplay}`}>
             <Phone className="navbar-phone-icon" size={17} aria-hidden="true" />
-            {business.phoneDisplay}
+            <span className="navbar-phone-number">{business.phoneDisplay}</span>
           </a>
         </div>
 
