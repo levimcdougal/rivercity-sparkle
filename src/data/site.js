@@ -6,7 +6,7 @@ export const business = {
   email: 'info@rivercitysparkle.com',
   emailHref: 'mailto:info@rivercitysparkle.com',
   reviewUrl: 'https://g.page/r/CVqkXQ/review',
-  bookingUrl: 'https://rivercitysparkle.launch27.com/?w_cleaning',
+  bookingUrl: 'https://rivercitysparkle.launch27.com/?w',
   instagramUrl: 'https://www.instagram.com/rivercitysparkle2025',
   facebookUrl: 'https://www.facebook.com/share/1854TLKZk9',
   googleProfileUrl: 'https://share.google/i1PM9Yoybu0TutpSq',
