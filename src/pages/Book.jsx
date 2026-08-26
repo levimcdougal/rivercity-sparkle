@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import SEO from '../components/SEO'
+import { business } from '../data/site'
 
 // `?w` is Launch27's Default form. Named forms such as `w_cleaning`
 // require the Premium Booking Forms feature on the Launch27 account.
@@ -45,6 +46,21 @@ export default function Book() {
       </section>
 
       <section className="booking-widget-section" aria-label="Online booking form">
+        <aside className="commercial-booking-notice">
+          <h2>Commercial Cleaning</h2>
+          <p>
+            Commercial cleaning cannot be booked online. Call us directly at{' '}
+            <a href={business.phoneHref}>{business.phoneDisplay}</a> or complete our walkthrough form so we can confirm your needs and provide custom pricing.
+          </p>
+          <a
+            href={business.commercialWalkthroughUrl}
+            className="service-book-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Schedule a Walkthrough
+          </a>
+        </aside>
         <div className="booking-widget-container">
           <iframe
             id="booking-widget-iframe"

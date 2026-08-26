@@ -77,7 +77,18 @@ export default function Services() {
                         ))}
                       </ul>
                     </div>
-                    <Link to="/book" className="service-book-link">Book Now</Link>
+                    {service.slug === 'commercial-cleaning' ? (
+                      <a
+                        href={business.commercialWalkthroughUrl}
+                        className="service-book-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Schedule a Walkthrough
+                      </a>
+                    ) : (
+                      <Link to="/book" className="service-book-link">Book Now</Link>
+                    )}
                   </article>
                 </FadeIn>
               )
