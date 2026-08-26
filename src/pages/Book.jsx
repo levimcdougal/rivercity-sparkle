@@ -61,6 +61,10 @@ export default function Book() {
             Schedule a Walkthrough
           </a>
         </aside>
+        <div className="residential-booking-intro">
+          <h2>Residential Cleaning Booking</h2>
+          <p>The form below is for scheduling residential cleaning services only.</p>
+        </div>
         <div className="booking-widget-container">
           <iframe
             id="booking-widget-iframe"

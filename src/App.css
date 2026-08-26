@@ -1010,6 +1010,21 @@
   font-weight: 700;
 }
 
+.residential-booking-intro {
+  max-width: 1100px;
+  margin: 0 auto 16px;
+}
+
+.residential-booking-intro h2 {
+  margin-bottom: 6px;
+  font-size: 26px;
+}
+
+.residential-booking-intro p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
 .booking-widget-container {
   max-width: 1100px;
   margin: 0 auto;
