@@ -14,12 +14,15 @@ import galleryImg8 from '../assets/IMG8-optimized.jpg'
 import galleryImg9 from '../assets/IMG9-optimized.jpg'
 import galleryImg10 from '../assets/IMG10-optimized.jpg'
 import galleryImg11 from '../assets/IMG11-optimized.jpg'
+import galleryNewPhoto from '../assets/gallery-new-photo.jpg'
+import galleryVideo1 from '../assets/gallery-video-1.mp4'
+import galleryVideo2 from '../assets/gallery-video-2.mp4'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
 import heroBg from '../assets/hero-kitchen-white-v3.jpg'
 import { services, testimonials, faqs } from '../data/site'
 
-const galleryItems = [
+const galleryPhotos = [
   galleryImg1,
   galleryImg2,
   galleryImg3,
@@ -31,6 +34,13 @@ const galleryItems = [
   galleryImg9,
   galleryImg10,
   galleryImg11,
+]
+
+const galleryItems = [
+  { type: 'video', src: galleryVideo1, alt: 'RiverCity Sparkle cleaning video 1' },
+  { type: 'video', src: galleryVideo2, alt: 'RiverCity Sparkle cleaning video 2' },
+  { type: 'image', src: galleryNewPhoto, alt: 'RiverCity Sparkle cleaning gallery photo' },
+  ...galleryPhotos.map((src, index) => ({ type: 'image', src, alt: `RiverCity Sparkle cleaning gallery ${index + 1}` })),
 ]
 
 const serviceIcons = [Home, Sparkles, KeyRound, CalendarCheck, Building2]
@@ -51,6 +61,7 @@ const schema = {
 export default function HomePage() {
   const featuredReviews = testimonials.slice(0, 4)
   const [videoStarted, setVideoStarted] = useState(false)
+  const [galleryPlaying, setGalleryPlaying] = useState(false)
 
   return (
     <main className="page-wrapper">
@@ -218,11 +229,30 @@ export default function HomePage() {
           </FadeIn>
         </div>
         <FadeIn delay={180}>
-          <div className="photo-marquee" aria-label="RiverCity Sparkle photo gallery">
-            <div className="photo-marquee-track">
-              {[...galleryItems, ...galleryItems, ...galleryItems].map((image, index) => (
-                <figure className="photo-marquee-card" key={`${image}-${index}`}>
-                  <img src={image} alt={`RiverCity Sparkle cleaning gallery ${(index % galleryItems.length) + 1}`} loading="lazy" decoding="async" />
+          <div className="photo-marquee" aria-label="RiverCity Sparkle photo and video gallery">
+            <div className="photo-marquee-track" style={galleryPlaying ? { animationPlayState: 'paused' } : undefined}>
+              {[...galleryItems, ...galleryItems, ...galleryItems].map((item, index) => (
+                <figure className="photo-marquee-card" key={`${item.src}-${index}`}>
+                  {item.type === 'video' ? (
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      aria-label={item.alt}
+                      onPlay={(event) => {
+                        event.currentTarget.closest('.photo-marquee-track').querySelectorAll('video').forEach(video => {
+                          if (video !== event.currentTarget) video.pause()
+                        })
+                        setGalleryPlaying(true)
+                      }}
+                      onPause={(event) => setGalleryPlaying(Array.from(event.currentTarget.closest('.photo-marquee-track').querySelectorAll('video')).some(video => !video.paused))}
+                      onEnded={() => setGalleryPlaying(false)}
+                    >
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+                  )}
                 </figure>
               ))}
             </div>

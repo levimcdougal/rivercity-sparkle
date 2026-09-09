@@ -919,7 +919,8 @@
   animation: photoMarquee 60s linear infinite;
 }
 
-.photo-marquee:hover .photo-marquee-track {
+.photo-marquee:hover .photo-marquee-track,
+.photo-marquee:focus-within .photo-marquee-track {
   animation-play-state: paused;
 }
 
@@ -932,7 +933,8 @@
   border: 1px solid #d9e8f6;
 }
 
-.photo-marquee-card img {
+.photo-marquee-card img,
+.photo-marquee-card video {
   width: 100%;
   height: 190px;
   object-fit: cover;
@@ -2114,7 +2116,8 @@
     flex-basis: 230px;
   }
 
-  .photo-marquee-card img {
+  .photo-marquee-card img,
+.photo-marquee-card video {
     height: 160px;
   }
 }
