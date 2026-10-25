@@ -2121,3 +2121,44 @@
     height: 160px;
   }
 }
+
+/* Policy document */
+.policy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-wrap: anywhere;
+}
+
+.policy-content section {
+  margin-top: 36px;
+}
+
+.policy-content h2 {
+  font-size: clamp(21px, 4vw, 26px);
+  margin-bottom: 16px;
+}
+
+.policy-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.policy-content a {
+  color: var(--blue-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

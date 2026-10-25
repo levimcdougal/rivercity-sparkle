@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Book from './pages/Book'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -25,6 +26,7 @@ function AnimatedRoutes() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/book" element={<Book />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </div>
   )

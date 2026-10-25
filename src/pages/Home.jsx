@@ -17,6 +17,9 @@ import galleryImg11 from '../assets/IMG11-optimized.jpg'
 import galleryNewPhoto from '../assets/gallery-new-photo.jpg'
 import galleryVideo1 from '../assets/gallery-video-1.mp4'
 import galleryVideo2 from '../assets/gallery-video-2.mp4'
+import galleryVideo3 from '../assets/gallery-video-3.mp4'
+import galleryEntryway from '../assets/IMG_0959.jpg'
+import galleryBeforeAfter from '../assets/IMG_0960.jpg'
 import FadeIn from '../components/FadeIn'
 import SEO from '../components/SEO'
 import heroBg from '../assets/hero-kitchen-white-v3.jpg'
@@ -37,6 +40,9 @@ const galleryPhotos = [
 ]
 
 const galleryItems = [
+  { type: 'image', src: galleryEntryway, alt: 'Before-and-after entryway cleaning and organization by RiverCity Sparkle', contain: true },
+  { type: 'image', src: galleryBeforeAfter, alt: 'Before-and-after bathroom, hallway, and bedroom cleaning by RiverCity Sparkle', contain: true },
+  { type: 'video', src: galleryVideo3, alt: 'RiverCity Sparkle cleaning video 3' },
   { type: 'video', src: galleryVideo1, alt: 'RiverCity Sparkle cleaning video 1' },
   { type: 'video', src: galleryVideo2, alt: 'RiverCity Sparkle cleaning video 2' },
   { type: 'image', src: galleryNewPhoto, alt: 'RiverCity Sparkle cleaning gallery photo' },
@@ -251,7 +257,7 @@ export default function HomePage() {
                       <source src={item.src} type="video/mp4" />
                     </video>
                   ) : (
-                    <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+                    <img src={item.src} alt={item.alt} loading="lazy" decoding="async" style={item.contain ? { objectFit: 'contain' } : undefined} />
                   )}
                 </figure>
               ))}
